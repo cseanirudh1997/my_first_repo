@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs40 \cf0 GIT commands\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b0\fs26 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 # Step 0: Optional - Navigate to your project directory\
+cd your-project-folder\
+\
+# Step 1: Initialize Git (if not already initialized)\
+git init && \\\
+\
+# Step 2: Stage all files\
+git add . && \\\
+\
+# Step 3: Commit your changes\
+git commit -m "Initial commit" && \\\
+\
+# Step 4: Generate an SSH key (only if you don't already have one)\
+# Press enter for default location and optionally set a passphrase\
+ssh-keygen -t ed25519 -C "your-email@example.com" && \\\
+\
+# Step 5: Start the SSH agent and add your key to it\
+eval "$(ssh-agent -s)" && \\\
+ssh-add ~/.ssh/id_ed25519 && \\\
+\
+# Step 6: Show your public key and copy it to GitHub > Settings > SSH keys > New SSH key\
+cat ~/.ssh/id_ed25519.pub && \\\
+\
+# Step 7: Add your GitHub repo as a remote using SSH (replace with your actual GitHub username and repo name)\
+git remote add origin git@github.com:your-username/your-repo.git && \\\
+\
+# Step 8: Rename branch to 'main' (if needed)\
+git branch -M main && \\\
+\
+# Step 9: Push to GitHub using SSH and set upstream for future pushes\
+git push -u origin main}
